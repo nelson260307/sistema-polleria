@@ -1,0 +1,847 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #ffffff;
+  color: #252a34;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.topbar {
+  background: white;
+  height: 76px;
+  padding: 0 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e9e9ed;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  background: #fff0ed;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 19px;
+  color: #d9362b;
+  letter-spacing: 1px;
+}
+
+.brand span {
+  font-size: 12px;
+  color: #858b98;
+}
+
+.navigation {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 9px;
+  color: #626978;
+  font-weight: 600;
+}
+
+.nav-btn.active {
+  background: #fff0ed;
+  color: #d9362b;
+}
+
+.nav-btn span {
+  margin-right: 6px;
+}
+
+.connection {
+  color: #6d7582;
+  font-size: 12px;
+}
+
+.connection-dot {
+  display: inline-block;
+  background: #e4a526;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+.main {
+  max-width: 1500px;
+  padding: 30px 4%;
+  margin: auto;
+  background: #ffffff;
+}
+
+.page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.page-heading h2 {
+  margin: 0 0 7px;
+  font-size: 25px;
+}
+
+.page-heading p,
+.panel-heading p {
+  color: #8b919d;
+  margin: 0;
+  font-size: 13px;
+}
+
+.date-label, .kitchen-badge {
+  background: white;
+  border: 1px solid #e9e9ed;
+  padding: 11px 15px;
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.stat-card {
+  background: white;
+  border: 1px solid #ebedf0;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-card span {
+  color: #777f8c;
+  font-size: 13px;
+}
+
+.stat-card strong {
+  font-size: 27px;
+}
+
+.stat-card small {
+  color: #9298a3;
+}
+
+.stat-card.yellow {
+  border-left: 4px solid #e9b42e;
+}
+
+.stat-card.green {
+  border-left: 4px solid #27a66b;
+}
+
+.stat-card.blue {
+  border-left: 4px solid #3588db;
+}
+
+.order-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(330px, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.panel {
+  background: white;
+  border: 1px solid #e9eaf0;
+  border-radius: 13px;
+  padding: 22px;
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.panel-heading h3,
+.panel h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.cart-count {
+  font-size: 11px;
+  background: #fff0ed;
+  color: #d9362b;
+  padding: 7px 10px;
+  border-radius: 20px;
+}
+
+.categories {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.category {
+  background: #f5f6f8;
+  border: none;
+  padding: 9px 17px;
+  border-radius: 8px;
+  color: #686f7b;
+  font-size: 13px;
+}
+
+.category.active {
+  background: #d9362b;
+  color: white;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #e8e9ed;
+  border-radius: 11px;
+  padding: 16px 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: .2s;
+  min-height: 155px;
+}
+
+.product-card:hover {
+  border-color: #d9362b;
+  background: #fff9f8;
+  transform: translateY(-2px);
+}
+
+.product-emoji {
+  font-size: 30px;
+}
+
+.product-card strong {
+  font-size: 12px;
+  text-align: center;
+}
+
+.product-price {
+  font-weight: bold;
+  color: #d9362b;
+  font-size: 14px;
+}
+
+.product-card small {
+  color: #888f9b;
+  font-size: 11px;
+}
+
+.order-type {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.type-btn, .payment-btn {
+  flex: 1;
+  padding: 11px 7px;
+  border: 1px solid #e7e8ec;
+  border-radius: 8px;
+  background: white;
+  color: #69717e;
+  font-size: 12px;
+}
+
+.type-btn.active, .payment-btn.active {
+  border-color: #d9362b;
+  color: #d9362b;
+  background: #fff5f3;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 17px;
+}
+
+.field label, .payment-section > label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666e7a;
+}
+
+.field select, .field input {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #e3e5e9;
+  border-radius: 8px;
+  background: white;
+  outline-color: #d9362b;
+}
+
+.cart-items {
+  min-height: 130px;
+  max-height: 300px;
+  overflow-y: auto;
+  border-top: 1px solid #eeeef1;
+  border-bottom: 1px solid #eeeef1;
+}
+
+.empty-cart {
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: #9198a3;
+}
+
+.empty-cart span {
+  font-size: 30px;
+}
+
+.empty-cart strong {
+  font-size: 13px;
+  color: #59616e;
+}
+
+.empty-cart p {
+  font-size: 11px;
+  margin: 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 13px 2px;
+  border-bottom: 1px solid #f0f0f2;
+  font-size: 12px;
+}
+
+.cart-product {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.cart-product small {
+  color: #969ca6;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantity button {
+  border: none;
+  border-radius: 5px;
+  background: #f0f1f3;
+  width: 25px;
+  height: 25px;
+  font-weight: bold;
+}
+
+.payment-section {
+  padding-top: 18px;
+}
+
+.payment-options {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0 15px;
+}
+
+.change {
+  display: flex;
+  justify-content: space-between;
+  color: #777f8b;
+  font-size: 12px;
+}
+
+.change strong {
+  color: #23965f;
+}
+
+.total-row {
+  border-top: 1px solid #ececf0;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-row strong {
+  color: #d9362b;
+  font-size: 23px;
+}
+
+.message {
+  background: #fff5df;
+  color: #9c6b11;
+  padding: 10px;
+  border-radius: 7px;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.submit-order {
+  width: 100%;
+  background: #d9362b;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 14px;
+  font-weight: bold;
+}
+
+.submit-order:hover {
+  background: #b92c23;
+}
+
+/* COLUMNAS DE COCINA */
+
+.kitchen-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+  align-items: start;
+}
+
+.kitchen-column {
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 280px;
+  background: #ffffff;
+  border: 1px solid #e9e9ed;
+}
+
+/* Columnas blancas */
+.kitchen-column.yellow,
+.kitchen-column.green,
+.kitchen-column.blue {
+  background: #ffffff;
+  border: 1px solid #e9e9ed;
+}
+
+.column-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.column-heading h3 {
+  font-size: 15px;
+}
+
+.column-heading span {
+  background: #f5f6f8;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.empty-column {
+  color: #9097a2;
+  text-align: center;
+  padding: 50px 5px;
+  font-size: 13px;
+}
+
+/* TARJETAS DE PEDIDOS */
+.ticket {
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 12px;
+}
+
+/* Pendientes: amarillo */
+.kitchen-column.yellow .ticket {
+  background: #fff7df;
+  border: 1px solid #f5cf67;
+}
+
+/* En preparación: verde */
+.kitchen-column.green .ticket {
+  background: #eaf8ef;
+  border: 1px solid #a8dfbd;
+}
+
+/* Entregados: azul */
+.kitchen-column.blue .ticket {
+  background: #eaf3ff;
+  border: 1px solid #a9ccff;
+}
+
+.ticket-top, .ticket-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.ticket-top {
+  font-size: 13px;
+}
+
+.ticket-top span {
+  color: #9299a4;
+  font-size: 11px;
+}
+
+.ticket-table {
+  font-size: 12px;
+  color: #d9362b;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.ticket-products {
+  padding: 13px 0;
+  font-size: 12px;
+  line-height: 1.9;
+  border-bottom: 1px solid #eee;
+}
+
+.ticket-bottom {
+  padding-top: 12px;
+  font-size: 13px;
+}
+
+.ticket-bottom button {
+  background: #d9362b;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+.ready-panel {
+  margin-top: 20px;
+}
+
+.ready-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  gap: 12px;
+  border-top: 1px solid #eee;
+  font-size: 13px;
+}
+
+.ready-item button {
+  border: none;
+  background: #3588db;
+  color: white;
+  border-radius: 7px;
+  padding: 9px 12px;
+}
+
+/* DISEÑO RESPONSIVE ORIGINAL */
+
+@media (max-width: 950px) {
+  .order-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kitchen-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    height: auto;
+    padding: 15px;
+    flex-wrap: wrap;
+  }
+
+  .navigation {
+    order: 3;
+    width: 100%;
+  }
+
+  .nav-btn {
+    flex: 1;
+  }
+
+  .connection {
+    font-size: 10px;
+  }
+
+  .main {
+    padding: 20px 12px;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .panel {
+    padding: 15px;
+  }
+}
+
+/* =====================================
+   INICIO DE SESIÓN
+===================================== */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #f5f6f8;
+}
+
+.login-card {
+  background: white;
+  width: 100%;
+  max-width: 410px;
+  padding: 38px;
+  border-radius: 16px;
+  border: 1px solid #e9eaf0;
+  box-shadow: 0 10px 35px rgba(0,0,0,.06);
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.login-logo {
+  text-align: center;
+  font-size: 48px;
+}
+
+.login-card h1 {
+  text-align: center;
+  color: #d9362b;
+  margin: 0;
+}
+
+.login-card p {
+  text-align: center;
+  color: #858b98;
+  font-size: 13px;
+  margin: 0 0 15px;
+}
+
+.login-card label {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.login-card input {
+  padding: 13px;
+  border: 1px solid #dddfe5;
+  border-radius: 8px;
+  outline-color: #d9362b;
+}
+
+.login-card button {
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #d9362b;
+  color: white;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.login-card button:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+.login-card small {
+  text-align: center;
+  color: #9298a3;
+  margin-top: 12px;
+}
+
+.login-error {
+  background: #fff0ed;
+  color: #bd3026;
+  padding: 10px;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+/* =====================================
+   PANEL DE COCINA A PANTALLA COMPLETA
+===================================== */
+
+.main-kitchen {
+  width: 100%;
+  max-width: none;
+  min-height: calc(100vh - 76px);
+  margin: 0;
+  padding: 24px 2%;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.main-kitchen .page-heading {
+  flex-shrink: 0;
+  margin-bottom: 20px;
+}
+
+.main-kitchen .stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  flex-shrink: 0;
+  margin-bottom: 20px;
+}
+
+.main-kitchen .kitchen-columns {
+  width: 100%;
+  flex: 1;
+  min-height: max(440px, calc(100vh - 350px));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+}
+
+.main-kitchen .kitchen-column {
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  padding: 20px;
+  background: #ffffff;
+}
+
+.main-kitchen .ticket {
+  padding: 18px;
+  margin-bottom: 14px;
+}
+
+.main-kitchen .ticket-top {
+  font-size: 15px;
+}
+
+.main-kitchen .ticket-table,
+.main-kitchen .ticket-products,
+.main-kitchen .ticket-bottom {
+  font-size: 14px;
+}
+
+.main-kitchen .ticket-bottom button {
+  padding: 10px 14px;
+  font-size: 12px;
+}
+
+/* ADAPTACIÓN PARA TABLETS Y CELULARES */
+
+@media (max-width: 950px) {
+  .main-kitchen {
+    min-height: auto;
+    padding: 20px 3%;
+  }
+
+  .main-kitchen .kitchen-columns {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .main-kitchen .kitchen-column {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-kitchen .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================
+   FONDO GENERAL Y COLUMNAS BLANCAS
+===================================== */
+
+body,
+.app,
+.main,
+.main-kitchen,
+.main-kitchen .kitchen-columns,
+.main-kitchen .kitchen-column,
+.main-kitchen .kitchen-column.yellow,
+.main-kitchen .kitchen-column.green,
+.main-kitchen .kitchen-column.blue {
+  background: #ffffff;
+}
+
+/* =====================================
+   COLORES DE LAS TARJETAS POR ESTADO
+===================================== */
+
+.main-kitchen .kitchen-column.yellow .ticket {
+  background: #fff7df;
+  border: 1px solid #f5cf67;
+}
+
+.main-kitchen .kitchen-column.green .ticket {
+  background: #eaf8ef;
+  border: 1px solid #a8dfbd;
+}
+
+.main-kitchen .kitchen-column.blue .ticket {
+  background: #eaf3ff;
+  border: 1px solid #a9ccff;
+}
+
